@@ -15,6 +15,7 @@ interface Question {
   options: string[]
   correctAnswer: number
   category: "intradermica" | "subcutanea" | "intramuscular" | "intravenosa" | "general"
+  explanation: string
 }
 
 const questions: Question[] = [
@@ -24,35 +25,40 @@ const questions: Question[] = [
     question: "¿Cuál es el ángulo de inserción para la vía intradérmica?",
     options: ["45° a 90°", "5° a 15°", "30° a 45°", "90°"],
     correctAnswer: 1,
-    category: "intradermica"
+    category: "intradermica",
+    explanation: "El ángulo de 5° a 15° es el correcto para la vía intradérmica porque permite que la aguja penetre solo en la capa más superficial de la piel (dermis), sin llegar al tejido subcutáneo. Este ángulo tan pequeño asegura que el medicamento se deposite correctamente y forme la pápula característica."
   },
   {
     id: 2,
     question: "¿Cuál es el volumen máximo que se puede administrar por vía intradérmica?",
     options: ["1 ml", "0.5 ml", "0.1 ml", "2 ml"],
     correctAnswer: 2,
-    category: "intradermica"
+    category: "intradermica",
+    explanation: "El volumen máximo es 0.1 ml (100 microlitros) porque la dermis es una capa muy delgada con espacio limitado. Volúmenes mayores causarían ruptura del tejido, dolor excesivo y distribución inadecuada del medicamento, además de dificultar la lectura de reacciones como en las pruebas de alergia o PPD."
   },
   {
     id: 3,
     question: "¿Qué debe formarse al aplicar correctamente una inyección intradérmica?",
     options: ["Un hematoma", "Una pápula o habón", "Una ampolla", "Nada visible"],
     correctAnswer: 1,
-    category: "intradermica"
+    category: "intradermica",
+    explanation: "La formación de una pápula o habón (elevación blanquecina de 6-10mm con aspecto de piel de naranja) es el indicador de que la inyección se realizó correctamente en la dermis. Si no se forma la pápula, significa que el medicamento se depositó demasiado profundo en el tejido subcutáneo."
   },
   {
     id: 4,
     question: "¿Cuál es el calibre de aguja recomendado para la vía intradérmica?",
     options: ["18-20 G", "21-23 G", "26-27 G", "14-16 G"],
     correctAnswer: 2,
-    category: "intradermica"
+    category: "intradermica",
+    explanation: "Se utilizan agujas de calibre 26-27 G (muy finas) porque la dermis es una capa delgada y superficial. Agujas más gruesas causarían trauma innecesario, dolor y dificultarían la técnica de inserción a un ángulo tan pequeño. La longitud recomendada es de 1/4 a 5/8 de pulgada."
   },
   {
     id: 5,
     question: "¿Cuánto tiempo después se realiza la lectura del PPD?",
     options: ["24 horas", "48-72 horas", "1 semana", "Inmediatamente"],
     correctAnswer: 1,
-    category: "intradermica"
+    category: "intradermica",
+    explanation: "La lectura del PPD (prueba de tuberculina) se realiza entre 48-72 horas porque este es el tiempo que tarda la reacción inmunológica de hipersensibilidad retardada (tipo IV) en desarrollarse completamente. Lecturas antes de 48 horas pueden dar falsos negativos, y después de 72 horas la reacción comienza a disminuir."
   },
   // Preguntas Subcutánea
   {
@@ -60,35 +66,40 @@ const questions: Question[] = [
     question: "¿En qué tejido se deposita el medicamento en la vía subcutánea?",
     options: ["Músculo", "Dermis", "Tejido graso subcutáneo", "Torrente sanguíneo"],
     correctAnswer: 2,
-    category: "subcutanea"
+    category: "subcutanea",
+    explanation: "El medicamento se deposita en el tejido graso subcutáneo (hipodermis), ubicado debajo de la dermis y encima del músculo. Este tejido tiene menor vascularización que el músculo, lo que permite una absorción lenta y sostenida del medicamento, ideal para fármacos como la insulina y las heparinas."
   },
   {
     id: 7,
     question: "¿Cuál es el ángulo de inserción para personas delgadas en la vía subcutánea?",
     options: ["90°", "45°", "15°", "30°"],
     correctAnswer: 1,
-    category: "subcutanea"
+    category: "subcutanea",
+    explanation: "En personas delgadas se usa un ángulo de 45° porque tienen menor cantidad de tejido graso subcutáneo. Un ángulo de 90° en personas delgadas podría atravesar el tejido subcutáneo y llegar al músculo. En personas con mayor tejido adiposo sí se puede usar 90°, siempre haciendo un pliegue cutáneo."
   },
   {
     id: 8,
     question: "¿Qué tipo de absorción caracteriza a la vía subcutánea?",
     options: ["Inmediata", "Lenta y sostenida", "Variable", "Muy rápida"],
     correctAnswer: 1,
-    category: "subcutanea"
+    category: "subcutanea",
+    explanation: "La absorción es lenta y sostenida debido a la menor vascularización del tejido graso subcutáneo comparado con el músculo. Esta característica es ventajosa para medicamentos que requieren liberación prolongada como la insulina, vacunas y anticoagulantes, proporcionando niveles terapéuticos más estables."
   },
   {
     id: 9,
     question: "¿Cuál es el calibre de aguja recomendado para la vía subcutánea?",
     options: ["18-20 G", "25-27 G", "14-16 G", "21-22 G"],
     correctAnswer: 1,
-    category: "subcutanea"
+    category: "subcutanea",
+    explanation: "Se recomiendan agujas de calibre 25-27 G porque son lo suficientemente finas para minimizar el dolor y el trauma tisular, pero permiten la administración de volúmenes de hasta 2 ml. La longitud típica es de 1/2 a 5/8 de pulgada, adecuada para alcanzar el tejido subcutáneo sin penetrar el músculo."
   },
   {
     id: 10,
     question: "¿Cuál NO es un lugar recomendado para inyección subcutánea?",
     options: ["Abdomen", "Cara anterior del muslo", "Glúteo mayor", "Cara externa del brazo"],
     correctAnswer: 2,
-    category: "subcutanea"
+    category: "subcutanea",
+    explanation: "El glúteo mayor NO es un sitio recomendado para inyección subcutánea porque es el sitio tradicional para inyecciones intramusculares. Los sitios correctos para subcutánea son: abdomen (excepto área periumbilical), cara externa del brazo, cara anterior del muslo y área subescapular, donde hay suficiente tejido graso accesible."
   },
   // Preguntas Intramuscular
   {
@@ -96,35 +107,40 @@ const questions: Question[] = [
     question: "¿Cuál es el ángulo de inserción para la vía intramuscular?",
     options: ["45°", "15°", "90°", "30°"],
     correctAnswer: 2,
-    category: "intramuscular"
+    category: "intramuscular",
+    explanation: "El ángulo de 90° (perpendicular a la piel) es el correcto porque permite que la aguja atraviese todas las capas de la piel y el tejido subcutáneo para llegar directamente al músculo. Este ángulo asegura que el medicamento se deposite en el tejido muscular, donde hay mayor vascularización para una absorción más rápida."
   },
   {
     id: 12,
     question: "¿Cuál es el sitio más recomendado por seguridad para inyección intramuscular?",
     options: ["Deltoides", "Dorsoglúteo", "Ventroglúteo", "Vasto lateral"],
     correctAnswer: 2,
-    category: "intramuscular"
+    category: "intramuscular",
+    explanation: "El ventroglúteo es el sitio más seguro porque está alejado de nervios importantes y vasos sanguíneos grandes, tiene una capa gruesa de músculo glúteo medio, menor tejido adiposo que el dorsoglúteo, y es fácil de localizar usando referencias anatómicas. Es ideal para adultos y niños mayores de 7 meses."
   },
   {
     id: 13,
     question: "¿Por qué se limita el uso del dorsoglúteo?",
     options: ["Es muy doloroso", "Riesgo del nervio ciático", "Poca absorción", "Difícil acceso"],
     correctAnswer: 1,
-    category: "intramuscular"
+    category: "intramuscular",
+    explanation: "El uso del dorsoglúteo se limita principalmente por el riesgo de lesionar el nervio ciático, que pasa por esa zona. Una inyección mal colocada puede causar parálisis del nervio ciático, dolor intenso y daño permanente. También tiene más tejido adiposo, lo que puede resultar en inyecciones subcutáneas accidentales."
   },
   {
     id: 14,
     question: "¿Cuál es el volumen de jeringa recomendado para vía intramuscular?",
     options: ["1 ml", "3 a 5 ml", "10 ml", "0.5 ml"],
     correctAnswer: 1,
-    category: "intramuscular"
+    category: "intramuscular",
+    explanation: "Las jeringas de 3 a 5 ml son las recomendadas porque permiten administrar los volúmenes típicos para esta vía: hasta 3 ml en deltoides, hasta 5 ml en ventroglúteo o dorsoglúteo, y hasta 5 ml en vasto lateral en adultos. Volúmenes mayores causan dolor y mala absorción."
   },
   {
     id: 15,
     question: "¿Qué se debe hacer con la piel antes de la inyección intramuscular?",
     options: ["Pellizcarla", "Estirarla/tensarla", "Masajearla", "Humedecerla"],
     correctAnswer: 1,
-    category: "intramuscular"
+    category: "intramuscular",
+    explanation: "La piel debe estirarse o tensarse para facilitar la inserción de la aguja a través de los tejidos y llegar al músculo. Esta técnica, a diferencia del pellizco usado en subcutánea, permite una penetración más directa y profunda. Además, reduce el dolor y facilita la administración con técnica en Z cuando es necesaria."
   },
   // Preguntas Intravenosa
   {
@@ -132,35 +148,40 @@ const questions: Question[] = [
     question: "¿Cuál es la biodisponibilidad de la vía intravenosa?",
     options: ["50%", "75%", "90%", "100%"],
     correctAnswer: 3,
-    category: "intravenosa"
+    category: "intravenosa",
+    explanation: "La biodisponibilidad es del 100% porque el medicamento se administra directamente en el torrente sanguíneo, evitando el proceso de absorción. No hay pérdida por efecto de primer paso hepático ni variabilidad en la absorción intestinal. Esto permite un efecto farmacológico inmediato y predecible."
   },
   {
     id: 17,
     question: "¿Cuál es el ángulo de inserción del catéter en la vía intravenosa?",
     options: ["5° a 10°", "15° a 30°", "45° a 60°", "90°"],
     correctAnswer: 1,
-    category: "intravenosa"
+    category: "intravenosa",
+    explanation: "El ángulo de 15° a 30° es el adecuado porque permite que el catéter entre en la vena de forma paralela a su trayecto, reduciendo el riesgo de atravesar la pared posterior del vaso. Un ángulo muy pronunciado puede perforar ambas paredes de la vena, causando hematoma e infiltración."
   },
   {
     id: 18,
     question: "¿Qué calibre de catéter se usa para la vía intravenosa periférica?",
     options: ["14-16 G", "18-24 G", "26-28 G", "10-12 G"],
     correctAnswer: 1,
-    category: "intravenosa"
+    category: "intravenosa",
+    explanation: "Los catéteres de calibre 18-24 G son los estándar para vía IV periférica. El 18-20 G se usa para infusiones rápidas, sangre o emergencias; el 22 G es el más versátil para la mayoría de tratamientos; y el 24 G se reserva para venas pequeñas, pediatría o pacientes con accesos difíciles."
   },
   {
     id: 19,
     question: "¿Qué se debe observar para confirmar la correcta punción intravenosa?",
     options: ["Formación de pápula", "Retorno sanguíneo", "Enrojecimiento", "Dolor intenso"],
     correctAnswer: 1,
-    category: "intravenosa"
+    category: "intravenosa",
+    explanation: "El retorno sanguíneo (reflujo de sangre en la cámara del catéter) es el indicador de que la aguja ha penetrado correctamente en la luz de la vena. Sin retorno sanguíneo, el catéter podría estar en tejido subcutáneo o haber atravesado la vena. Siempre se debe verificar antes de iniciar la infusión."
   },
   {
     id: 20,
     question: "¿Cuál NO es una vena comúnmente usada para acceso intravenoso?",
     options: ["Vena cefálica", "Vena basílica", "Vena yugular", "Venas del dorso de la mano"],
     correctAnswer: 2,
-    category: "intravenosa"
+    category: "intravenosa",
+    explanation: "La vena yugular NO se usa para acceso intravenoso periférico porque es una vena central del cuello que requiere técnicas especiales, equipo específico y mayor entrenamiento. Se considera acceso venoso central, no periférico. Las venas periféricas comunes son: cefálica, basílica, mediana cubital y las del dorso de la mano."
   },
 ]
 
@@ -421,13 +442,46 @@ export default function QuizPage() {
               )
             })}
           </div>
+
+          {/* Explicación */}
+          {showResult && (
+            <div className={cn(
+              "mt-6 p-4 rounded-xl border-2",
+              selectedAnswer === question.correctAnswer
+                ? "bg-primary/5 border-primary/30"
+                : "bg-red-500/5 border-red-500/30"
+            )}>
+              <div className="flex items-start gap-3">
+                {selectedAnswer === question.correctAnswer ? (
+                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 shrink-0" />
+                ) : (
+                  <XCircle className="h-5 w-5 text-red-400 mt-0.5 shrink-0" />
+                )}
+                <div>
+                  <p className={cn(
+                    "font-semibold mb-2",
+                    selectedAnswer === question.correctAnswer ? "text-primary" : "text-red-400"
+                  )}>
+                    {selectedAnswer === question.correctAnswer ? "¡Correcto!" : "Incorrecto"}
+                  </p>
+                  <p className="text-sm text-foreground/80 leading-relaxed">
+                    <span className="font-medium text-foreground">Respuesta correcta: </span>
+                    {question.options[question.correctAnswer]}
+                  </p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mt-2">
+                    {question.explanation}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Action Buttons */}
         <div className="flex justify-end">
           {!showResult ? (
-            <Button 
-              onClick={handleConfirmAnswer} 
+            <Button
+              onClick={handleConfirmAnswer}
               disabled={selectedAnswer === null}
               size="lg"
             >

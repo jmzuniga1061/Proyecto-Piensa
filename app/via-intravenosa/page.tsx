@@ -1,6 +1,7 @@
 import { Header } from "@/components/header"
 import { SectionTitle } from "@/components/section-title"
 import { VentajasDesventajas } from "@/components/ventajas-desventajas"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Image from "next/image"
 
 const galeriaImagenes = [
@@ -242,33 +243,41 @@ export default function ViaIntravenosaPage() {
         {/* Procedimiento de administración */}
         <section className="mb-12">
           <SectionTitle className="mb-8">Procedimiento de administración por vía intravenosa</SectionTitle>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {procedimiento.map((paso, index) => (
-              <div
-                key={index}
-                className="bg-card rounded-2xl p-5 shadow-sm border border-border/50 hover:border-primary/30 transition-colors"
-              >
-                <h3 className="text-primary font-semibold text-lg mb-4">{paso.titulo}</h3>
-                <ul className="space-y-2">
-                  {paso.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start gap-2 text-sm text-foreground/75">
-                      <span className="text-primary mt-0.5">•</span>
-                      {item}
-                    </li>
-                  ))}
-                  {paso.subItems && (
-                    <ul className="ml-4 mt-2 space-y-1">
-                      {paso.subItems.map((subItem, subIndex) => (
-                        <li key={subIndex} className="flex items-start gap-2 text-sm text-foreground/60">
-                          <span className="text-muted-foreground mt-0.5">•</span>
-                          {subItem}
+          <div className="bg-card rounded-2xl shadow-sm border border-border/50 overflow-hidden">
+            <Accordion type="single" collapsible className="w-full">
+              {procedimiento.map((paso, index) => (
+                <AccordionItem key={index} value={`paso-${index}`} className="border-border/50 px-6">
+                  <AccordionTrigger className="text-primary font-semibold text-base hover:no-underline py-5">
+                    <span className="flex items-center gap-3">
+                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-bold text-sm">
+                        {index + 1}
+                      </span>
+                      {paso.titulo.replace(/^\d+\.\s*/, '')}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-5">
+                    <ul className="space-y-2 ml-11">
+                      {paso.items.map((item, itemIndex) => (
+                        <li key={itemIndex} className="flex items-start gap-2 text-sm text-foreground/75">
+                          <span className="text-primary mt-0.5">•</span>
+                          {item}
                         </li>
                       ))}
+                      {paso.subItems && (
+                        <ul className="ml-4 mt-2 space-y-1">
+                          {paso.subItems.map((subItem, subIndex) => (
+                            <li key={subIndex} className="flex items-start gap-2 text-sm text-foreground/60">
+                              <span className="text-muted-foreground mt-0.5">-</span>
+                              {subItem}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </ul>
-                  )}
-                </ul>
-              </div>
-            ))}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </section>
       </main>

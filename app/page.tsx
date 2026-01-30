@@ -56,25 +56,25 @@ const tiposDeVias = [
     title: "Vía Intradérmica",
     description: "Se aplica entre las capas de la piel. Uso frecuente en pruebas diagnósticas.",
     href: "/via-intradermica",
-    variant: "cyan" as const,
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%283%29-gGrwRWWrC3H9Am5PVwGBZQc7Le7hQ2.jpeg",
   },
   {
     title: "Vía Subcutánea",
     description: "Se aplica en el tejido graso. Absorción lenta y controlada.",
     href: "/via-subcutanea",
-    variant: "purple" as const,
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%284%29-ymJmky1nl0nNvrICvX6TVoWtVbWrQ4.jpeg",
   },
   {
     title: "Vía Intramuscular",
     description: "Aplicación en el músculo. Absorción rápida.",
     href: "/via-intramuscular",
-    variant: "cyan" as const,
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.04%20PM%20%281%29-JFkB8cEpel98NRphupzjDRsYY222Ss.jpeg",
   },
   {
     title: "Vía Intravenosa",
     description: "Ingreso directo al torrente sanguíneo. Acción inmediata.",
     href: "/via-intravenosa",
-    variant: "green" as const,
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%285%29-wuVllcV2soxTVsh4F1V5jPGCi8dcD8.jpeg",
   },
 ]
 
@@ -126,7 +126,7 @@ export default function HomePage() {
                 title={via.title}
                 description={via.description}
                 href={via.href}
-                variant={via.variant}
+                image={via.image}
               />
             ))}
           </div>

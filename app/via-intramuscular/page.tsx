@@ -2,6 +2,7 @@
 
 import { Header } from "@/components/header"
 import { SectionTitle } from "@/components/section-title"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Image from "next/image"
 
 const galeriaImagenes = [
@@ -245,23 +246,32 @@ export default function ViaIntramuscularPage() {
 
         {/* Procedimiento */}
         <section className="mb-12">
-          <SectionTitle color="green">Procedimiento de administración por vía intramuscular</SectionTitle>
-          <div className="mt-8 space-y-6">
-            {procedimiento.map((paso, index) => (
-              <div key={index} className="bg-card rounded-2xl p-6 shadow-sm border border-border/50">
-                <h3 className="text-lg font-bold text-emerald-400 mb-4">
-                  {index + 1}. {paso.titulo}
-                </h3>
-                <ul className="space-y-2">
-                  {paso.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start gap-3 text-sm text-foreground/75 leading-relaxed">
-                      <span className="text-emerald-400 mt-0.5">•</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <SectionTitle color="green" className="mb-8">Procedimiento de administración por vía intramuscular</SectionTitle>
+          <div className="bg-card rounded-2xl shadow-sm border border-border/50 overflow-hidden">
+            <Accordion type="single" collapsible className="w-full">
+              {procedimiento.map((paso, index) => (
+                <AccordionItem key={index} value={`paso-${index}`} className="border-border/50 px-6">
+                  <AccordionTrigger className="text-emerald-400 font-semibold text-base hover:no-underline py-5">
+                    <span className="flex items-center gap-3">
+                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-400/10 text-emerald-400 font-bold text-sm">
+                        {index + 1}
+                      </span>
+                      {paso.titulo}
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-5">
+                    <ul className="space-y-2 ml-11">
+                      {paso.items.map((item, itemIndex) => (
+                        <li key={itemIndex} className="flex items-start gap-3 text-sm text-foreground/75 leading-relaxed">
+                          <span className="text-emerald-400 mt-0.5">•</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </section>
       </main>
