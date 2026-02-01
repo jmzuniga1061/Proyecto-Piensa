@@ -46,11 +46,13 @@ export default function LoginPage() {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <Link href="/" className="inline-flex items-center gap-2 text-primary font-bold text-2xl">
-            <Syringe className="h-8 w-8" />
-            <span>Vías Parenterales</span>
+          <Link href="/" className="inline-flex items-center gap-3 text-primary font-bold text-2xl">
+            <div className="w-12 h-12 rounded-full bg-primary/15 flex items-center justify-center border border-primary/20">
+              <Syringe className="h-6 w-6" />
+            </div>
+            <span>AdminMed</span>
           </Link>
-          <p className="text-muted-foreground mt-2">Accede a tu cuenta</p>
+          <p className="text-muted-foreground mt-2">Inicia sesión en tu cuenta</p>
         </div>
 
         {/* Card */}

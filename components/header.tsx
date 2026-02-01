@@ -41,9 +41,11 @@ export function Header({ title, subtitle }: HeaderProps) {
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 text-primary font-bold text-lg">
-              <Syringe className="h-5 w-5" />
-              <span className="hidden sm:inline">Vías Parenterales</span>
+            <Link href="/" className="flex items-center gap-3 text-primary font-bold text-lg">
+              <div className="w-9 h-9 rounded-full bg-primary/15 flex items-center justify-center border border-primary/20">
+                <Syringe className="h-4 w-4" />
+              </div>
+              <span className="hidden sm:inline">AdminMed</span>
             </Link>
 
             {/* Desktop Nav */}
