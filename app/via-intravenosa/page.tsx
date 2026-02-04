@@ -6,49 +6,34 @@ import Image from "next/image"
 
 const galeriaImagenes = [
   {
-    src: "/images/via-injection-1.jpg",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.02%20PM%20%281%29-oIlL40SMXYQJtt9YHf9FzJqbHMI3zq.jpeg",
     alt: "Preparación de suero IV con jeringa",
     caption: "Preparación del suero intravenoso"
   },
   {
-    src: "/images/via-injection-2.jpg",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%283%29-gGrwRWWrC3H9Am5PVwGBZQc7Le7hQ2.jpeg",
     alt: "Inserción de aguja intravenosa",
     caption: "Técnica de inserción IV"
   },
   {
-    src: "/images/via-injection-3.jpg",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%285%29-wuVllcV2soxTVsh4F1V5jPGCi8dcD8.jpeg",
     alt: "Extracción de sangre venosa",
     caption: "Punción venosa con torniquete"
   },
   {
-    src: "/images/via-injection-4.jpg",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%284%29-ymJmky1nl0nNvrICvX6TVoWtVbWrQ4.jpeg",
     alt: "Inyección subcutánea abdominal",
     caption: "Administración subcutánea"
   },
   {
-    src: "/images/via-injection-5.jpg",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.04%20PM%20%281%29-JFkB8cEpel98NRphupzjDRsYY222Ss.jpeg",
     alt: "Material médico para administración IV",
     caption: "Materiales de preparación"
   },
   {
-    src: "/images/via-injection-6.jpg",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.04%20PM-302W7LDfS7fQTcwyio00swSqAOgoSR.jpeg",
     alt: "Jeringa estéril empacada",
     caption: "Jeringa estéril"
-  },
-  {
-    src: "/images/iv-procedure-1.jpg",
-    alt: "Preparación de bolsa IV",
-    caption: "Preparación del equipo IV"
-  },
-  {
-    src: "/images/iv-procedure-2.jpg",
-    alt: "Localización de vena",
-    caption: "Localización de acceso venoso"
-  },
-  {
-    src: "/images/iv-catheter.jpg",
-    alt: "Catéter y materiales IV",
-    caption: "Material para cateterización"
   },
 ]
 

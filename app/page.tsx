@@ -5,49 +5,34 @@ import Image from "next/image"
 
 const galeriaImagenes = [
   {
-    src: "/images/via-injection-1.jpg",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.02%20PM%20%281%29-oIlL40SMXYQJtt9YHf9FzJqbHMI3zq.jpeg",
     alt: "Preparación de suero IV con jeringa",
     caption: "Preparación de suero IV"
   },
   {
-    src: "/images/via-injection-2.jpg",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%283%29-gGrwRWWrC3H9Am5PVwGBZQc7Le7hQ2.jpeg",
     alt: "Inserción de aguja intravenosa",
     caption: "Técnica de inserción IV"
   },
   {
-    src: "/images/via-injection-3.jpg",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%285%29-wuVllcV2soxTVsh4F1V5jPGCi8dcD8.jpeg",
     alt: "Extracción de sangre venosa",
     caption: "Punción venosa"
   },
   {
-    src: "/images/via-injection-4.jpg",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%284%29-ymJmky1nl0nNvrICvX6TVoWtVbWrQ4.jpeg",
     alt: "Inyección subcutánea abdominal",
     caption: "Inyección subcutánea"
   },
   {
-    src: "/images/via-injection-5.jpg",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.04%20PM%20%281%29-JFkB8cEpel98NRphupzjDRsYY222Ss.jpeg",
     alt: "Material médico para administración",
     caption: "Materiales de preparación"
   },
   {
-    src: "/images/via-injection-6.jpg",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.04%20PM-302W7LDfS7fQTcwyio00swSqAOgoSR.jpeg",
     alt: "Jeringa estéril empacada",
     caption: "Jeringa estéril"
-  },
-  {
-    src: "/images/hero-nursing-1.jpg",
-    alt: "Práctica de enfermería",
-    caption: "Práctica con modelo"
-  },
-  {
-    src: "/images/hero-nursing-2.jpg",
-    alt: "Jeringas médicas",
-    caption: "Tipos de jeringas"
-  },
-  {
-    src: "/images/hero-nursing-3.jpg",
-    alt: "Preparación de medicamento",
-    caption: "Preparación de dosis"
   },
 ]
 
@@ -56,25 +41,25 @@ const tiposDeVias = [
     title: "Vía Intradérmica",
     description: "Se aplica entre las capas de la piel. Uso frecuente en pruebas diagnósticas.",
     href: "/via-intradermica",
-    image: "/images/via-injection-2.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%283%29-gGrwRWWrC3H9Am5PVwGBZQc7Le7hQ2.jpeg",
   },
   {
     title: "Vía Subcutánea",
     description: "Se aplica en el tejido graso. Absorción lenta y controlada.",
     href: "/via-subcutanea",
-    image: "/images/via-injection-4.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%284%29-ymJmky1nl0nNvrICvX6TVoWtVbWrQ4.jpeg",
   },
   {
     title: "Vía Intramuscular",
     description: "Aplicación en el músculo. Absorción rápida.",
     href: "/via-intramuscular",
-    image: "/images/via-injection-5.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.04%20PM%20%281%29-JFkB8cEpel98NRphupzjDRsYY222Ss.jpeg",
   },
   {
     title: "Vía Intravenosa",
     description: "Ingreso directo al torrente sanguíneo. Acción inmediata.",
     href: "/via-intravenosa",
-    image: "/images/via-injection-3.jpg",
+    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%285%29-wuVllcV2soxTVsh4F1V5jPGCi8dcD8.jpeg",
   },
 ]
 

@@ -6,32 +6,17 @@ import Image from "next/image"
 
 const galeriaImagenes = [
   {
-    src: "/images/intradermica-1.jpg",
-    alt: "Técnica de inyección intradérmica",
-    caption: "Inyección intradérmica en antebrazo"
-  },
-  {
-    src: "/images/intradermica-2.jpg",
-    alt: "Reacción de prueba cutánea",
-    caption: "Formación de pápula (habón)"
-  },
-  {
-    src: "/images/intradermica-3.jpg",
-    alt: "Material para inyección intradérmica",
-    caption: "Jeringa tuberculina y materiales"
-  },
-  {
-    src: "/images/via-injection-2.jpg",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%283%29-gGrwRWWrC3H9Am5PVwGBZQc7Le7hQ2.jpeg",
     alt: "Técnica de inserción de aguja",
     caption: "Técnica de inserción"
   },
   {
-    src: "/images/via-injection-6.jpg",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.04%20PM-302W7LDfS7fQTcwyio00swSqAOgoSR.jpeg",
     alt: "Jeringa estéril empacada",
     caption: "Jeringa estéril"
   },
   {
-    src: "/images/via-injection-5.jpg",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.04%20PM%20%281%29-JFkB8cEpel98NRphupzjDRsYY222Ss.jpeg",
     alt: "Materiales de preparación",
     caption: "Bandeja de materiales"
   },
