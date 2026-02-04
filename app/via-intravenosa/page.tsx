@@ -6,32 +6,32 @@ import Image from "next/image"
 
 const galeriaImagenes = [
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.02%20PM%20%281%29-oIlL40SMXYQJtt9YHf9FzJqbHMI3zq.jpeg",
+    src: "/images/via-injection-1.jpg",
     alt: "Preparación de suero IV con jeringa",
     caption: "Preparación del suero intravenoso"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%283%29-gGrwRWWrC3H9Am5PVwGBZQc7Le7hQ2.jpeg",
+    src: "/images/via-injection-2.jpg",
     alt: "Inserción de aguja intravenosa",
     caption: "Técnica de inserción IV"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%285%29-wuVllcV2soxTVsh4F1V5jPGCi8dcD8.jpeg",
+    src: "/images/via-injection-3.jpg",
     alt: "Extracción de sangre venosa",
     caption: "Punción venosa con torniquete"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%284%29-ymJmky1nl0nNvrICvX6TVoWtVbWrQ4.jpeg",
+    src: "/images/via-injection-4.jpg",
     alt: "Inyección subcutánea abdominal",
     caption: "Administración subcutánea"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.04%20PM%20%281%29-JFkB8cEpel98NRphupzjDRsYY222Ss.jpeg",
+    src: "/images/via-injection-5.jpg",
     alt: "Material médico para administración IV",
     caption: "Materiales de preparación"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.04%20PM-302W7LDfS7fQTcwyio00swSqAOgoSR.jpeg",
+    src: "/images/via-injection-6.jpg",
     alt: "Jeringa estéril empacada",
     caption: "Jeringa estéril"
   },

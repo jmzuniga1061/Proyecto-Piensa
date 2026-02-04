@@ -21,17 +21,17 @@ const galeriaImagenes = [
     caption: "Jeringa tuberculina y materiales"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%283%29-gGrwRWWrC3H9Am5PVwGBZQc7Le7hQ2.jpeg",
+    src: "/images/via-injection-2.jpg",
     alt: "Técnica de inserción de aguja",
     caption: "Técnica de inserción"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.04%20PM-302W7LDfS7fQTcwyio00swSqAOgoSR.jpeg",
+    src: "/images/via-injection-6.jpg",
     alt: "Jeringa estéril empacada",
     caption: "Jeringa estéril"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.04%20PM%20%281%29-JFkB8cEpel98NRphupzjDRsYY222Ss.jpeg",
+    src: "/images/via-injection-5.jpg",
     alt: "Materiales de preparación",
     caption: "Bandeja de materiales"
   },

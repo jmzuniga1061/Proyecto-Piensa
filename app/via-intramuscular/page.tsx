@@ -22,17 +22,17 @@ const galeriaImagenes = [
     caption: "Sitio ventroglúteo"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.02%20PM%20%281%29-oIlL40SMXYQJtt9YHf9FzJqbHMI3zq.jpeg",
+    src: "/images/via-injection-1.jpg",
     alt: "Preparación de suero",
     caption: "Preparación del medicamento"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.04%20PM%20%281%29-JFkB8cEpel98NRphupzjDRsYY222Ss.jpeg",
+    src: "/images/via-injection-5.jpg",
     alt: "Materiales para inyección IM",
     caption: "Bandeja de materiales"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.04%20PM-302W7LDfS7fQTcwyio00swSqAOgoSR.jpeg",
+    src: "/images/via-injection-6.jpg",
     alt: "Jeringa estéril",
     caption: "Jeringa estéril empacada"
   },

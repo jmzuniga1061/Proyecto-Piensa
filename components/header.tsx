@@ -45,7 +45,7 @@ export function Header({ title, subtitle }: HeaderProps) {
               <div className="w-9 h-9 rounded-full bg-primary/15 flex items-center justify-center border border-primary/20">
                 <Syringe className="h-4 w-4" />
               </div>
-              <span className="hidden sm:inline">AdminMed</span>
+              <span>AdminMed</span>
             </Link>
 
             {/* Desktop Nav */}
@@ -125,7 +125,7 @@ export function Header({ title, subtitle }: HeaderProps) {
         <div
           className={cn(
             "md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-card/95 backdrop-blur-lg border-b border-border/50",
-            mobileMenuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0"
+            mobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
           )}
         >
           <div className="px-6 py-4 space-y-1">

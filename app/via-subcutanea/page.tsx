@@ -23,17 +23,17 @@ const galeriaImagenes = [
     caption: "Materiales de insulina"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%284%29-ymJmky1nl0nNvrICvX6TVoWtVbWrQ4.jpeg",
+    src: "/images/via-injection-4.jpg",
     alt: "Inyección subcutánea",
     caption: "Administración subcutánea"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.03%20PM%20%283%29-gGrwRWWrC3H9Am5PVwGBZQc7Le7hQ2.jpeg",
+    src: "/images/via-injection-2.jpg",
     alt: "Técnica de inserción",
     caption: "Técnica de inserción"
   },
   {
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-01-28%20at%207.43.04%20PM%20%281%29-JFkB8cEpel98NRphupzjDRsYY222Ss.jpeg",
+    src: "/images/via-injection-5.jpg",
     alt: "Bandeja de materiales",
     caption: "Preparación de materiales"
   },
