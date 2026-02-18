@@ -230,7 +230,7 @@ export default function QuizPage() {
     setShowResult(true)
   }
 
-  const handleNextQuestion = () => {
+  const handleNextQuestion = async () => {
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1)
       setSelectedAnswer(null)
@@ -239,7 +239,7 @@ export default function QuizPage() {
       // Quiz completed
       const finalScore = selectedAnswer === questions[currentQuestion].correctAnswer ? score + 1 : score
       if (user) {
-        addQuizResult(finalScore, questions.length)
+        await addQuizResult(finalScore, questions.length)
       }
       setQuizCompleted(true)
     }
