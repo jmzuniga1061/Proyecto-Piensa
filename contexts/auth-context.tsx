@@ -1,6 +1,7 @@
 "use client"
 
 import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
+import { createClient } from "@/lib/supabase/client"
 
 interface User {
   id: string
@@ -46,124 +47,98 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     setIsMounted(true)
-    // Check for existing session
-    if (typeof window !== 'undefined') {
-      const storedUser = localStorage.getItem(CURRENT_USER_KEY)
-      if (storedUser) {
-        try {
-          const parsedUser = JSON.parse(storedUser)
-          setUser(parsedUser)
-        } catch {
-          localStorage.removeItem(CURRENT_USER_KEY)
-        }
+    const supabase = createClient()
+    const getSession = async () => {
+      const { data, error } = await supabase.auth.getUser()
+      if (data?.user) {
+        setUser({
+          id: data.user.id,
+          name: data.user.user_metadata?.name || data.user.email || "",
+          email: data.user.email || "",
+          points: 0,
+          quizHistory: [],
+        })
+      } else {
+        setUser(null)
       }
+      setIsLoading(false)
     }
-    setIsLoading(false)
+    getSession()
   }, [])
 
-  const getUsers = (): StoredUser[] => {
-    try {
-      const users = localStorage.getItem(USERS_KEY)
-      return users ? JSON.parse(users) : []
-    } catch {
-      return []
-    }
-  }
 
-  const saveUsers = (users: StoredUser[]) => {
-    localStorage.setItem(USERS_KEY, JSON.stringify(users))
-  }
 
   const login = async (email: string, password: string): Promise<{ success: boolean; error?: string }> => {
-    const users = getUsers()
-    const foundUser = users.find(u => u.email.toLowerCase() === email.toLowerCase() && u.password === password)
-    
-    if (!foundUser) {
-      return { success: false, error: "Correo o contraseña incorrectos" }
+    const supabase = createClient()
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password })
+    if (error) {
+      return { success: false, error: error.message }
     }
-
-    const userWithoutPassword: User = {
-      id: foundUser.id,
-      name: foundUser.name,
-      email: foundUser.email,
-      points: foundUser.points || 0,
-      quizHistory: foundUser.quizHistory || [],
+    if (!data.user) {
+      return { success: false, error: "No se pudo iniciar sesión" }
     }
-
-    setUser(userWithoutPassword)
-    localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(userWithoutPassword))
-    
+    // Puedes mapear el usuario de Supabase a tu estructura si lo deseas
+    setUser({
+      id: data.user.id,
+      name: data.user.user_metadata?.name || data.user.email || "",
+      email: data.user.email || "",
+      points: 0,
+      quizHistory: [],
+    })
     return { success: true }
   }
 
   const register = async (name: string, email: string, password: string): Promise<{ success: boolean; error?: string }> => {
-    const users = getUsers()
-    
-    // Check if email already exists
-    if (users.some(u => u.email.toLowerCase() === email.toLowerCase())) {
-      return { success: false, error: "Este correo ya está registrado" }
-    }
-
-    const newUser: StoredUser = {
-      id: crypto.randomUUID(),
-      name,
+    const supabase = createClient()
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
+      options: {
+        data: { name },
+      },
+    })
+    if (error) {
+      return { success: false, error: error.message }
+    }
+    if (!data.user) {
+      return { success: false, error: "No se pudo registrar el usuario" }
+    }
+    setUser({
+      id: data.user.id,
+      name: name,
+      email: data.user.email || "",
       points: 0,
       quizHistory: [],
-    }
-
-    users.push(newUser)
-    saveUsers(users)
-
-    const userWithoutPassword: User = {
-      id: newUser.id,
-      name: newUser.name,
-      email: newUser.email,
-      points: 0,
-      quizHistory: [],
-    }
-
-    setUser(userWithoutPassword)
-    localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(userWithoutPassword))
-    
+    })
     return { success: true }
   }
 
-  const logout = () => {
+  const logout = async () => {
+    const supabase = createClient()
+    await supabase.auth.signOut()
     setUser(null)
-    localStorage.removeItem(CURRENT_USER_KEY)
   }
 
-  const addQuizResult = (score: number, totalQuestions: number) => {
+  // Guarda el resultado del quiz en Supabase
+  const addQuizResult = async (score: number, totalQuestions: number) => {
     if (!user) return
-
-    const users = getUsers()
-    const userIndex = users.findIndex(u => u.id === user.id)
-    
-    if (userIndex === -1) return
-
-    const newResult: QuizResult = {
+    const supabase = createClient()
+    const { error } = await supabase.from('quiz_results').insert({
+      user_id: user.id,
       date: new Date().toISOString(),
       score,
-      totalQuestions,
+      total_questions: totalQuestions,
+    })
+    if (!error) {
+      setUser({
+        ...user,
+        points: user.points + score * 10,
+        quizHistory: [
+          ...user.quizHistory,
+          { date: new Date().toISOString(), score, totalQuestions },
+        ],
+      })
     }
-
-    const pointsEarned = score * 10 // 10 puntos por respuesta correcta
-    
-    users[userIndex].points = (users[userIndex].points || 0) + pointsEarned
-    users[userIndex].quizHistory = [...(users[userIndex].quizHistory || []), newResult]
-    
-    saveUsers(users)
-
-    const updatedUser: User = {
-      ...user,
-      points: users[userIndex].points,
-      quizHistory: users[userIndex].quizHistory,
-    }
-
-    setUser(updatedUser)
-    localStorage.setItem(CURRENT_USER_KEY, JSON.stringify(updatedUser))
   }
 
   return (
